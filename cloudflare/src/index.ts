@@ -1,6 +1,8 @@
 import { betterAuth } from 'better-auth/minimal'
 
-const auth = betterAuth({})
+const auth = betterAuth({
+	secret: 'test'
+})
 
 export default {
 	async fetch (request: Request) {

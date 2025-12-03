@@ -1,7 +1,7 @@
 import { betterAuth } from 'better-auth/minimal'
 
 const auth = betterAuth({
-	secret: 'test',
+	secret: 'd364b08a1bc015edb163be932fd70fbc4ae9dcecafde2939b0461905a4c8dcc5',
 	disabledPaths: ['/ok']
 })
 

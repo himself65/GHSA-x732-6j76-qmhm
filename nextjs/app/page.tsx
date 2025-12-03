@@ -1,3 +1,3 @@
-export default function Home () {
-  return 'hello world!'
+export default function Home() {
+  return "hello world!";
 }

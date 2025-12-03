@@ -1,20 +1,16 @@
-const express = require("express");
+import express from "express";
+import { betterAuth } from "better-auth/minimal";
+import { toNodeHandler } from "better-auth/node";
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
+const auth = betterAuth();
 
-app.get("/*", (req, res) => {
-  res.json({
-    message: "Catch-all route",
-    method: req.method,
-    path: req.path,
-    url: req.url,
-  });
-});
+app.all("/api/auth/*", toNodeHandler(auth));
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-module.exports = app;
+export default app;
